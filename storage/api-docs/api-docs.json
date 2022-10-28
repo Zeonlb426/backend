@@ -1,0 +1,20 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Develup API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Summary text",
+                "description": "Home page",
+                "responses": {
+                    "200": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        }
+    }
+}

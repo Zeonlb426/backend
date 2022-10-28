@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185.03 20.13">
+    <defs>
+        <linearGradient id="a" x1="92.52" y1="3986.42" x2="92.52" y2="3966.4" gradientTransform="translate(0 -3966.39)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#c8c8c8"/>
+            <stop offset="1" stop-color="#f4f4f4"/>
+        </linearGradient>
+        <linearGradient id="b" x1="12.47" y1="3981.64" x2="12.47" y2="3966.44" gradientTransform="translate(0 -3966.39)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#adadad"/>
+            <stop offset="1" stop-color="#6d6d6d"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <path fill="url(#a)" d="M13,0H0V19.62H11.88c8.67,0,13-4.22,13-9.76C24.85,4.7,21,0,13,0ZM10.61,14.54H7.67V5h2.94c5.25,0,6.68,2.11,6.68,4.85S15.15,14.54,10.61,14.54Zm25.06-2.26H47.2V7.51H35.67V4.86H49.19V0H28V19.62H49.58V14.7H35.67ZM74,0,67.48,11.5,60.64,0H53l-.23.71,11.69,19h5.72L81.4.72,81.16,0ZM92.14,12.28h11.53V7.51H92.14V4.86h13.52V0H84.5V19.62h21.59V14.7h-14ZM117.67,0H110V19.62h21.88V14H117.59V0Zm34.52,9.21a4.66,4.66,0,0,1-5,5.06c-3,0-5.1-1.33-5.1-5.08V0h-7.55V9.93c0,6.2,4.37,10.2,12.72,10.2s12.49-4,12.49-10.39V0h-7.55ZM175.41.06H162.76V19.62h7.72V14.47h4.85c5.33,0,9.7-2.66,9.7-7.19S181.22,0,175.41,0Zm-.72,9.38H170.4V5.33H175c1.75,0,2.71.62,2.71,2s-1,2.06-3,2.06Z"/>
+        <path fill="url(#b)" d="M23.09,15.25a8.66,8.66,0,0,0,1.75-5.39C24.84,4.7,21,0,13,0H.09L7.71,5.13h2.94c5.25,0,6.68,2.11,6.68,4.84a3.56,3.56,0,0,1-.24,1.29Z"/>
+    </g>
+</svg>
