@@ -84,11 +84,6 @@ const ProjectsCreate = (props) => {
             isError: false
         }];
 
-    const tabs = useMemo(() => {
-        tabs.map()
-
-        return tabs
-    }, [tabError])
 
     const galleryImagesRef = useRef(null);
     const [GalleryList, setGalleryList] = useState(data.gallery);

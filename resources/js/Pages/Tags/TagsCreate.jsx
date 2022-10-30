@@ -61,7 +61,7 @@ const TagsCreate = (props) => {
                             <Dropzone onDrop={(file) => (onDrop(file, 'logo'))}
                                       accept={"image/*"}
                                       image={data.logo}
-                                      error={errors}
+                                      error={errors.logo}
                                       name="logo"
                                       bgColor={data.bg_color}
                                       classNameLabel={'p-2 w-32 h-32'}

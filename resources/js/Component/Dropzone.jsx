@@ -31,7 +31,7 @@ const Dropzone = ({ onDrop, accept, image, name, error, bgColor, classNameLabel 
                    style={{background: bgColor}}
             >
                 {image ? (
-                    <img className={'min-h-[100px] min-w-[100px] bg-slate-400'} src={image_url} alt={''} />
+                    <img className={'min-h-[100px] min-w-[100px] '} src={image_url} alt={''} />
                 ) : (
                     <div className="flex flex-col justify-center items-center text-center">
                         <svg className="w-8 h-8 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor"
