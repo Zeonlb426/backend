@@ -7,11 +7,17 @@ export default function Select({
     options = [],
     value = '',
     required = false,
-    handleSelect,
     placeholder = '',
     label = '',
     classLabel = '',
+    setData,
     }) {
+        const handleSelect = ( e, name ) => {
+            setData((data) => ({
+                ...data,
+                [name]: e,
+            }))
+        }
 
     return (
         <div className="w-full">

@@ -8,22 +8,30 @@ export function Input({
     label = '',
     value = '',
     required = false,
-    handleChange,
     type = 'text',
     placeholder = '',
-    error = null,
+    errors = null,
     isFocused,
     autoComplete,
-    min,
-    max,
-
+    min = 0,
+    max = 100,
+    setData,
 }) {
     const input = useRef();
+
     useEffect(() => {
         if (isFocused) {
             input.current.focus();
         }
     }, []);
+
+    const handleChange = (e) => {
+        errors[e.target.name] ? delete errors[e.target.name] : '';
+        setData(data => ({
+            ...data,
+            [e.target.name]: e.target.value,
+        }))
+    }
 
     return (
         <div className={'w-full relative ' + className}>
@@ -41,7 +49,7 @@ export function Input({
                 className={'w-full border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 ' +
                 'shadow-sm dark:text-white focus:border-indigo-300 focus:ring focus:ring-indigo-200 ' +
                 'focus:ring-opacity-50 rounded-md ' +
-                `${error ? 'border-red-600 dark:border-red-600':''}` + classInput}
+                `${errors[name] ? 'border-red-600 dark:border-red-600':''}` + classInput}
                 ref={input}
                 max={max}
                 min={min}
@@ -50,7 +58,7 @@ export function Input({
                 placeholder={placeholder}
                 onChange={(e) => handleChange(e)}
             />
-            {error && <div className="absolute bottom-0 left-0 translate-y-full text-red-600">{error}</div>}
+            {errors[name] && <div className="absolute bottom-0 left-0 translate-y-full text-red-600">{errors[name]}</div>}
         </div>
     );
 }

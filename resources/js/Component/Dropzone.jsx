@@ -1,7 +1,7 @@
 import React from "react";
 import { useDropzone } from "react-dropzone";
 
-const Dropzone = ({ onDrop, accept, image, name, error, bgColor, classNameLabel }) => {
+const Dropzone = ({ onDrop, accept, image, name, errors, bgColor, classNameLabel }) => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         accept
@@ -21,7 +21,7 @@ const Dropzone = ({ onDrop, accept, image, name, error, bgColor, classNameLabel 
                 image = null;
         }
     }
-
+console.log(errors);
     return (
         <div className="grid justify-center items-center">
             <label htmlFor={name}
@@ -56,7 +56,7 @@ const Dropzone = ({ onDrop, accept, image, name, error, bgColor, classNameLabel 
 
                 <input name={name} {...getInputProps()}/>
             </label>
-            {error && <div className="text-red-600">{error}</div>}
+            {errors[name] && <div className="absolute bottom-0 left-0 translate-y-full text-red-600">{errors[name]}</div>}
         </div>
     );
 };

@@ -7,11 +7,17 @@ export default function MultiSelect({
     options = [],
     value = [],
     required = false,
-    handleMultiSelect,
     placeholder = '',
     label = '',
     classLabel = '',
+    setData,
     }) {
+        const handleMultiSelect = ( e, name ) => {
+            setData((data) => ({
+                ...data,
+                [name]: e,
+            }))
+        }
 
     return (
         <div className="w-full">

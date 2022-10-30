@@ -17,7 +17,7 @@ export default function EditButton({routeName, id}) {
             type="button"
             onClick={(e) => handlerClick(e, id)}
         >
-            <PencilIcon className="h-4 w-4 mx-auto dark:text-slate-300 text-slate-900 dark:text-slate-100"/>
+            <PencilIcon className="h-4 w-4 mx-auto text-slate-900 dark:text-slate-100"/>
         </button>
     );
 }

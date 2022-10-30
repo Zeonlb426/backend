@@ -4,14 +4,35 @@ import {PlusIcon, TrashIcon} from "@heroicons/react/24/outline";
 export default function DynamicInput({
                                          name = '',
                                          data = [],
-                                         handleChangeBlock,
-                                         removeElement,
-                                         addElement,
                                          required = false,
                                          label = '',
                                          classLabel = '',
                                          classInput = '',
+                                         setData,
     }) {
+        const handleChangeBlock = (e, name, index) => {
+            data[name][index] = e.target.value
+            setData((data) => ({
+                ...data,
+                [name]: [...data[name]],
+            }))
+        }
+
+        const removeElement = (name, id) => {
+            let finalArray = data[name].filter((e, index) => index !== id );
+
+            setData((data) => ({
+                ...data,
+                [name]: finalArray,
+            }))
+        }
+
+        const addElement = (name, body) => {
+            setData((data) => ({
+                ...data,
+                [name]: [...data[name], body],
+            }))
+        }
 
     return (
         <div className="w-full">
@@ -24,7 +45,7 @@ export default function DynamicInput({
                     <span className="hidden sm:block text-[10px]"> required</span>
                 </span> : '' }
             </label>
-            {data.map((item, index) => (
+            {data[name].map((item, index) => (
                 <div className="grid grid-cols-[1fr_52px] gap-2 mb-2" key={index}>
                     <div className="grid">
                         <input
