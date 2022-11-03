@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {Listbox, Transition} from "@headlessui/react";
 import {CheckIcon, ChevronUpDownIcon} from "@heroicons/react/24/outline";
 
+
 export default function MultiSelect({
     name = '',
     options = [],
@@ -18,7 +19,7 @@ export default function MultiSelect({
                 [name]: e,
             }))
         }
-
+        
     return (
         <div className="w-full">
             <label htmlFor={name} className={`${!label && 'hidden'} relative text-sm font-bold text-slate-700 dark:text-slate-300` + classLabel}>
@@ -28,7 +29,7 @@ export default function MultiSelect({
                     <span className="hidden sm:block text-[10px]"> required</span>
                 </span> : '' }
             </label>
-            <Listbox value={value} onChange={e => handleMultiSelect(e, name)} multiple>
+            <Listbox value={value} by="id" onChange={e => handleMultiSelect(e, name)} multiple>
                 <div className="relative mt-1">
                     <Listbox.Button
                         className={'relative cursor-pointer w-full min-h-[42px] flex gap-1 flex-wrap ' +
@@ -37,12 +38,12 @@ export default function MultiSelect({
                         'focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md text-sm'}
                     >
                         {value.length > 0 ? (value.map((item) =>
-                                <span
-                                    key={item.id}
-                                    className={"block px-2 py-1 rounded-md bg-slate-200 dark:bg-slate-600 dark:text-white"}
-                                >
-                            {item.name}
-                        </span>
+                            <span
+                                key={item.id}
+                                className={"block px-2 py-1 rounded-md bg-slate-200 dark:bg-slate-600 dark:text-white"}
+                            >
+                                {item.name}
+                            </span>
                         )) : (
                             <span className="block text-sm text-slate-400 dark:text-slate-500">
                             {placeholder}
@@ -111,8 +112,8 @@ export default function MultiSelect({
                                         </span>
                                             {selected ? (
                                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-green-600">
-                                                <CheckIcon className="h-5 w-5" aria-hidden="true" />
-                                            </span>
+                                                    <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                                                </span>
                                             ) : null}
                                         </>
                                     )}

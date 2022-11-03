@@ -20,6 +20,7 @@ class TechnologiesResource extends JsonResource
         'id' => "integer",
         'name' => "string",
         'slug' => "string",
+        'order' => "integer",
         'bg_color' => "string",
         'logo' => "null|string"
     ])]
@@ -30,6 +31,7 @@ class TechnologiesResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'slug' => $this->slug,
+            'order' => $this->order,
             'bg_color' => $this->bg_color,
             'logo' => $logo,
         ];

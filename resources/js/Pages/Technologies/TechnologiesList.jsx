@@ -4,9 +4,9 @@ import {usePage} from "@inertiajs/inertia-react";
 import {CheckIcon, MinusIcon} from "@heroicons/react/24/outline";
 import Pagination from '../../Component/Pagination';
 import CreateButton from "@/Component/CreateButton";
-import TitlePage from "@/Component/TitlePage";
 import EditButton from "@/Component/EditButton";
 import DeleteButton from "@/Component/DeleteButton";
+import HeaderPage from "@/Blocks/HeaderPage";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -40,14 +40,9 @@ const TechnologiesList = (props) => {
 
     return (
         <div className="max-w-screen-2xl mx-auto bg-white dark:bg-slate-800 overflow-hidden shadow-sm sm:rounded-lg p-4 sm:p-6">
-            <div className="flex items-center justify-between mb-6">
-                <TitlePage
-                    title={'Technologies'}
-                    subTitle={'List'}
-                    description={'List of technologies participating in sets projects'}
-                />
+            <HeaderPage title={'Technologies'} subTitle={'List'} description={'List of technologies participating in sets projects'}>
                 <CreateButton routeName={'technologies.create'} title={'Technologie'}/>
-            </div>
+            </HeaderPage>
             <div className="flex items-center gap-4 justify-start mb-2">
                 <button
                     className={"flex items-center sm:w-[75px] py-1 px-2 bg-slate-100 dark:bg-slate-900 text-slate-900 " +
@@ -87,8 +82,8 @@ const TechnologiesList = (props) => {
                          onClick={() => handleSelected(id)}
                          className={
                              classNames(
-                                 "grid grid-cols-[16px_1fr_106px] sm:grid-cols-[16px_2fr_1fr_106px] " +
-                                 "items-center justify-between px-2 py-1 gap-2 sm:gap-10 hover:bg-slate-100 " +
+                                 "grid grid-cols-[16px_1fr_106px] sm:grid-cols-[16px_2fr_1fr_106px]",
+                                 "items-center justify-between px-2 py-1 gap-2 sm:gap-10 hover:bg-slate-100",
                                  "dark:hover:bg-slate-700 border-t border-slate-200 dark:border-slate-600",
                                  selected.selections.includes(id) ? ' bg-slate-100 dark:bg-slate-900 ' : ''
                          )}

@@ -43,7 +43,7 @@ export default function Award({ item, setData, index, data }) {
                         />
                     </div>
                     <div className={'w-full'}>
-                        <label htmlFor={"name"} className={`relative text-sm font-bold text-slate-700 dark:text-slate-300 `}>
+                        <label htmlFor={"nomination"} className={`relative text-sm font-bold text-slate-700 dark:text-slate-300 `}>
                             Nomination:
                         </label>
                         <input
@@ -57,7 +57,7 @@ export default function Award({ item, setData, index, data }) {
                         />
                     </div>
                     <div className={'w-full'}>
-                        <label htmlFor={"name"} className={`relative text-sm font-bold text-slate-700 dark:text-slate-300 `}>
+                        <label htmlFor={"date"} className={`relative text-sm font-bold text-slate-700 dark:text-slate-300 `}>
                             Date:
                         </label>
                         <input
@@ -71,7 +71,7 @@ export default function Award({ item, setData, index, data }) {
                         />
                     </div>
                     <div className={'w-full'}>
-                        <label htmlFor={"name"} className={`relative text-sm font-bold text-slate-700 dark:text-slate-300 `}>
+                        <label htmlFor={"url"} className={`relative text-sm font-bold text-slate-700 dark:text-slate-300 `}>
                             Link to source:
                         </label>
                         <input

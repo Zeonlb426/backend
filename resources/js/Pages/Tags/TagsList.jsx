@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Authenticated from '@/Layouts/Authenticated';
 import {usePage} from "@inertiajs/inertia-react";
-import TitlePage from "@/Component/TitlePage";
+import HeaderPage from "@/Blocks/HeaderPage";
 import CreateButton from "@/Component/CreateButton";
 import {CheckIcon, MinusIcon} from "@heroicons/react/24/outline";
 import DeleteButton from "@/Component/DeleteButton";
@@ -40,14 +40,9 @@ const TagsList = (props) => {
 
     return (
         <div className="max-w-screen-2xl mx-auto bg-white dark:bg-slate-800 overflow-hidden shadow-sm sm:rounded-lg p-4 sm:p-6">
-            <div className="flex items-center justify-between mb-6">
-                <TitlePage
-                    title={'Tags'}
-                    subTitle={'List'}
-                    description={'List of tags participating in sets projects'}
-                />
+            <HeaderPage title={'Tags'} subTitle={'List'} description={'List of tags participating in sets projects'}>
                 <CreateButton routeName={'tags.create'} title={'Tag'}/>
-            </div>
+            </HeaderPage>
             <div className="flex items-center gap-4 justify-start mb-2">
                 <button
                     className={"flex items-center sm:w-[75px] py-1 px-2 bg-slate-100 dark:bg-slate-900 text-slate-900 " +

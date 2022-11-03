@@ -42,6 +42,8 @@ class ProjectsCollection extends ResourceCollection
                 'sub_title' => $project->sub_title,
                 'description' => $project->description,
                 'short_description' => $project->short_description,
+                'technologies' => $project->technologies,
+                'tags' => $project->tags,
                 'image_preview' => $imagePreview,
             ];
         });

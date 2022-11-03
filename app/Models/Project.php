@@ -100,56 +100,36 @@ class Project extends Model implements HasMedia
         return $this->belongsToMany(Technologies::class, 'project_technologies', 'project_id', 'technologies_id');
     }
 
-    public function tag()
+    public function tags()
     {
         return $this->belongsToMany(Tag::class, 'project_tags', 'project_id', 'tag_id');
     }
 
-//    public function imageCaseMedia()
-//    {
-//        return $this
-//            ->morphOne(Media::class, 'model')
-//            ->where('collection_name', '=', self::IMAGE_COLLECTION_CASE)
-//        ;
-//    }
-//
-//    public function imageAwardMedia()
-//    {
-//        return $this
-//            ->morphOne(Media::class, 'model')
-//            ->where('collection_name', '=', self::IMAGE_COLLECTION_AWARD)
-//        ;
-//    }
-//
-//    public function imageProjectMedia()
-//    {
-//        return $this
-//            ->morphOne(Media::class, 'model')
-//            ->where('collection_name', '=', self::IMAGE_COLLECTION_PROJECT)
-//        ;
-//    }
+   public function imageCaseMedia()
+   {
+       return $this
+           ->morphOne(Media::class, 'model')
+           ->where('collection_name', '=', self::IMAGE_COLLECTION_CASE)
+       ;
+   }
 
-    protected function imageCase(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => dd($value),
-            set: function($file) {
-                dd($file);
-                switch (gettype($file)) {
-                    case 'object':
-                        $this->addMedia($file)
-                            ->toMediaCollection(self::IMAGE_COLLECTION_CASE)
-                        ;
-                        break;
-                    case 'NULL':
-                        $this->clearMediaCollection(self::IMAGE_COLLECTION_CASE);
-                        break;
-                    case 'string':
-                        break;
-                }
-            }
-        );
-    }
+   public function imageAwardMedia()
+   {
+       return $this
+           ->morphOne(Media::class, 'model')
+           ->where('collection_name', '=', self::IMAGE_COLLECTION_AWARD)
+       ;
+   }
+
+   public function imageProjectMedia()
+   {
+       return $this
+           ->morphOne(Media::class, 'model')
+           ->where('collection_name', '=', self::IMAGE_COLLECTION_PROJECT)
+       ;
+   }
+
+
 
     protected function award(): Attribute
     {
@@ -172,7 +152,7 @@ class Project extends Model implements HasMedia
     protected function aspectRatio(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => json_decode($value),
+            // get: fn ($value) => $value,
             set: function($value) {
                 list($column, $row) = explode("X", $value);
                 return [

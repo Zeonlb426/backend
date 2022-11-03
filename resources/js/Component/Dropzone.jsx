@@ -1,7 +1,7 @@
 import React from "react";
 import { useDropzone } from "react-dropzone";
 
-const Dropzone = ({ onDrop, accept, image, name, errors, bgColor, classNameLabel }) => {
+const Dropzone = ({ onDrop, accept, image, name, errors, bgColor = 'transparent', classNameLabel }) => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         accept
@@ -21,7 +21,7 @@ const Dropzone = ({ onDrop, accept, image, name, errors, bgColor, classNameLabel
                 image = null;
         }
     }
-console.log(errors);
+
     return (
         <div className="grid justify-center items-center">
             <label htmlFor={name}
